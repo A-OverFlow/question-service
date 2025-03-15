@@ -1,0 +1,30 @@
+### 질문 조회 API
+GET http://localhost:8110/api/v1/question/1
+Content-Type: application/json
+
+
+### 질문 생성 API
+POST http://localhost:8110/api/v1/question
+Content-Type: application/json
+
+{
+    "subject": "질문 입니다",
+    "content": "궁금해요",
+    "author": "작성자",
+    "status": "NEW"
+}
+
+
+### 질문 수정 API
+PUT http://localhost:8110/api/v1/question
+Content-Type: application/json
+
+{
+    "id": 1,
+    "key": "SUBJECT",
+    "value": "수정된 제목"
+}
+
+
+### 질문 삭제 API
+DELETE http://localhost:8110/api/v1/question/1

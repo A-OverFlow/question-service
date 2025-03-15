@@ -1,0 +1,30 @@
+server:
+  port: 8110
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  application:
+    name: question-service
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/aof?serverTimezone=Asia/Seoul
+    username: root
+    password: root1234
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show-sql: true
+        format_sql: true
+        default_batch_fetch_size: 1000
+    open-in-view: false
+
+logging:
+  level:
+    org.hibernate.SQL: debug

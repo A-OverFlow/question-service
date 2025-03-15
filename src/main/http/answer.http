@@ -1,0 +1,29 @@
+### 답변 조회 API
+GET http://localhost:8110/api/v1/answer/1
+Content-Type: application/json
+
+
+### 답변 생성 API
+POST http://localhost:8110/api/v1/answer
+Content-Type: application/json
+
+{
+    "questionId": 1,
+    "content": "답변입니다",
+    "author": "작성자"
+}
+
+
+### 답변 수정 API
+PUT http://localhost:8110/api/v1/answer
+Content-Type: application/json
+
+{
+    "id": 1,
+    "key": "CONTENT",
+    "value": "수정된 답변입니다"
+}
+
+
+### 답변 삭제 API
+DELETE http://localhost:8110/api/v1/answer/1

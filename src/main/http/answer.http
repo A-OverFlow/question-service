@@ -20,10 +20,40 @@ Content-Type: application/json
 
 {
     "id": 1,
-    "key": "CONTENT",
+    "key": "content",
     "value": "수정된 답변입니다"
 }
 
 
 ### 답변 삭제 API
 DELETE http://localhost:8110/api/v1/answer/1
+
+
+### 좋아요 남기기 API
+POST http://localhost:8110/api/v1/answer/emotion
+Content-Type: application/json
+
+{
+  "answerId": 1,
+  "author": "작성자",
+  "emoji": "LIKE"
+}
+
+### 좋아요 수정 API
+PUT http://localhost:8110/api/v1/answer/emotion
+Content-Type: application/json
+
+{
+  "answerId": 1,
+  "author": "작성자",
+  "emoji": "DISLIKE"
+}
+
+### 좋아요 취소 API
+DELETE http://localhost:8110/api/v1/answer/emotion
+Content-Type: application/json
+
+{
+  "answerId": 1,
+  "author": "작성자"
+}

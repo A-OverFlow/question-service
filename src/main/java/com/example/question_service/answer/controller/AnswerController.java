@@ -1,8 +1,6 @@
 package com.example.question_service.answer.controller;
 
-import com.example.question_service.answer.dto.AnswerCreateDto;
-import com.example.question_service.answer.dto.AnswerDto;
-import com.example.question_service.answer.dto.AnswerUpdateDto;
+import com.example.question_service.answer.dto.*;
 import com.example.question_service.answer.service.AnswerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -47,5 +45,20 @@ public class AnswerController {
     public ResponseEntity<Void> deleteAnswer(@PathVariable("id") Long id) {
         answerService.deleteAnswer(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/emotion")
+    public ResponseEntity<AnswerDto> createEmotion(@Valid @RequestBody EmotionCreateDto emotionCreateDto) {
+        return ResponseEntity.ok(answerService.createEmotion(emotionCreateDto));
+    }
+
+    @PutMapping("/emotion")
+    public ResponseEntity<AnswerDto> updateEmotion(@Valid @RequestBody EmotionCreateDto emotionCreateDto) {
+        return ResponseEntity.ok(answerService.updateEmotion(emotionCreateDto));
+    }
+
+    @DeleteMapping("/emotion")
+    public ResponseEntity<AnswerDto> deleteEmotion(@Valid @RequestBody EmotionRemoveDto emotionCreateDto) {
+        return ResponseEntity.ok(answerService.removeEmotion(emotionCreateDto));
     }
 }

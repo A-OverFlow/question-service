@@ -37,6 +37,9 @@ public class Answer extends BaseEntity {
     @OneToMany(mappedBy = "answer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 
+    @OneToMany(mappedBy = "answer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Emotion> emotions = new ArrayList<>();
+
     public void updateAnswer(AnswerUpdateDto answerUpdateDto) {
         AnswerUpdateKey key = AnswerUpdateKey.fromString(answerUpdateDto.getKey());
         String value = answerUpdateDto.getValue();
@@ -59,6 +62,16 @@ public class Answer extends BaseEntity {
     public void updateComment(Comment comment) {
         this.comments.add(comment);
         comment.updateAnswer(this);
+    }
+
+    public void updateEmotion(Emotion emotion) {
+        this.emotions.add(emotion);
+        emotion.updateAnswer(this);
+    }
+
+    public void removeEmotion(Emotion emotion) {
+        this.emotions.remove(emotion);
+        emotion.updateAnswer(null);
     }
 
     @Override

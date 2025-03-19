@@ -16,7 +16,7 @@ public enum AnswerStatus {
 
     public static AnswerStatus fromString(String status) {
         return Arrays.stream(AnswerStatus.values())
-                .filter(s -> s.getStatus().equals(status))
+                .filter(s -> s.getStatus().equalsIgnoreCase(status))
                 .findAny().orElse(null);
     }
 }

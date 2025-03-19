@@ -21,7 +21,7 @@ Content-Type: application/json
 
 {
     "id": 1,
-    "key": "SUBJECT",
+    "key": "subject",
     "value": "수정된 제목"
 }
 

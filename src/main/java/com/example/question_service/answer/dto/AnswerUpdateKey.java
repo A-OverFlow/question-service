@@ -14,7 +14,7 @@ public enum AnswerUpdateKey {
 
     public static AnswerUpdateKey fromString(String key) {
         for (AnswerUpdateKey answerUpdateKey : AnswerUpdateKey.values()) {
-            if (answerUpdateKey.getKey().equals(key)) {
+            if (answerUpdateKey.getKey().equalsIgnoreCase(key)) {
                 return answerUpdateKey;
             }
         }
